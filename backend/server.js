@@ -59,7 +59,7 @@ app.put('/api/users/:id', async (req, res) => {
         const updatedUser = await User.findByIdAndUpdate(
             id,
             { name, age, gender },
-            { new: true, runValidators: true } // Returns the updated document
+            { new: true, runValidators: true }
         );
         if (updatedUser) {
             res.status(200).json(updatedUser);
@@ -89,4 +89,4 @@ app.delete('/api/users/:id', async (req, res) => {
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
-});
+}); 
